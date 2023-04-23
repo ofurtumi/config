@@ -91,3 +91,26 @@ mcd() {
 c() {
 	code $1 -r && exit
 }
+
+genenv() {
+	if dropdb "$1" >/dev/null; then
+		echo "Dropped database $1"
+	else
+		echo "Database $1 does not exist"
+	fi
+
+	if createdb "$1" >/dev/null; then
+		echo "Created database $1"
+	else
+		echo "Database $1 already exists"
+	fi
+
+	printf "SESSION_SECRET=asdf\nJWT_SECRET=asdf\nDATABASE_URL=postgres://tumi:$2@localhost/%s" "$1" >.env
+}
+
+# startar neovim án nokkurs padding
+v() {
+	kitty @ set-spacing padding=0
+	nvim $*
+	kitty @ set-spacing padding=default
+}
