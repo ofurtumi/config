@@ -62,6 +62,7 @@ fi
 
 export JAVA_HOME=/usr/lib/jvm/java-17-openjdk-amd64/
 export PATH=$PATH:$JAVA_HOME
+HISTIGNORE='genenv *'
 
 export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"                   # This loads nvm
