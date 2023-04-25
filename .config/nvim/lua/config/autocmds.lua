@@ -21,6 +21,10 @@ api.nvim_create_autocmd("BufReadCmd", {
   group = nonvimGroup,
 })
 
+api.nvim_create_autocmd("TermOpen", {
+  command = "silent! normal i",
+})
+
 -- local typProcess = api.nvim_create_augroup("typProcess", { clear = true })
 -- api.nvim_create_autocmd("BufReadCmd", {
 --   pattern = "*.typ",
