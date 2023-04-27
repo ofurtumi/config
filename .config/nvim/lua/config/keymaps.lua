@@ -17,5 +17,3 @@ end
 map("n", "<leader>uL", function()
   Util.toggle("lbr")
 end, { desc = "Toggle linebreak" })
-
-map("n", "<Leader>cc", "gcc", { desc = "Toggle comment" })
